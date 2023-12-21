@@ -45,7 +45,7 @@ Q3 = questions[:Q3]
 Q4 = questions[:Q4]
 Q5 = questions[:Q5]
 
-def showOptions(o) o.each { |x| puts "#{x}"} 
+def showOptions(o) o.each { |x| puts x } #.with_index(1) { |x, index| puts "#{index}. #{x}"}
 end
 
 class Quiz
@@ -78,6 +78,7 @@ class Quiz
     else
         puts "wrong... :("
     end
+    displayScore
   end
 
   def winner? 
@@ -96,14 +97,9 @@ question4 = Quiz.new(Q4[:Q], Q4[:O], Q4[:A])
 question5 = Quiz.new(Q5[:Q], Q5[:O], Q5[:A])
 
 question1.ask
-question1.displayScore
 question2.ask
-question2.displayScore
 question3.ask
-question3.displayScore
 question4.ask
-question4.displayScore
 question5.ask
-question5.displayScore
 
 question5.winner?
