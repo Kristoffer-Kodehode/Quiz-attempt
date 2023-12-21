@@ -45,39 +45,8 @@ Q3 = questions[:Q3]
 Q4 = questions[:Q4]
 Q5 = questions[:Q5]
 
-score = 0
-count = 0
-
 def showOptions(o) o.each { |x| puts "#{x}"} 
 end
-
-def winner 
-    puts "\nYou win! : D"
-end
-
-def looser 
-    puts "\nYOU LOOSE! >:("
-end
-
-# def incScore 
-#     return score += 1
-# end
-
-# def ask(q, o, a)
-#   puts q
-#   showOptions(o)
-#   puts "Your answer:"
-#   answer = gets.chomp
-#   unless answer != a
-#     puts "Correct!" 
-#     incScore
-#   else
-#     puts "wrong... :("
-#   end
-# end
-
-# ask(Q1[:Q], Q1[:O], Q1[:A])
-# puts "Your score was #{score}!"
 
 class Quiz
 
@@ -111,6 +80,13 @@ class Quiz
     end
   end
 
+  def winner? 
+    case @@score
+      when 5 then puts "\nYou win! : D"
+    else
+      puts "\nYOU LOOSE! >:("
+    end
+  end
 end
 
 question1 = Quiz.new(Q1[:Q], Q1[:O], Q1[:A])
@@ -130,5 +106,4 @@ question4.displayScore
 question5.ask
 question5.displayScore
 
-winner unless @@score < 5
-looser unless @@score = 5
+question5.winner?
