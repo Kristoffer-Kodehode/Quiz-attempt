@@ -2,7 +2,7 @@ questions = {
     Q1: {
         Q: "What day was JavaScript released?",
         O: ["May 23rd, 1995", "Nov 24th, 1995", "Dec 4th, 1995", "Dec 17th, 1996"],  
-        A: "Dec 4th 1995"
+        A: "Dec 4th, 1995"
     }, 
     Q2: {
         Q: "Inside which HTML element do we put the JavaScript?",
@@ -34,3 +34,35 @@ questions = {
     }, 
 }
 
+puts "Welcome to this Javascript quiz that i made in Ruby and stole all the questions for! (I previously made one in node and most of those questions were taken from W3 schools' JS quiz)"
+
+puts "How to play:\n 
+Read each question and your options properly, then write your answer exactly as it is written in the options."
+
+score = 0
+count = 0
+
+Q1 = questions[:Q1]
+Q2 = questions[:Q2]
+Q3 = questions[:Q3]
+Q4 = questions[:Q4]
+Q5 = questions[:Q5]
+
+def showOptions(o) o.each { |x| puts x} 
+end
+
+def ask(q, o, a)
+  puts q
+  showOptions(o)
+  puts "Your answer:"
+  answer = gets.chomp
+  unless answer != a
+    puts "Correct!" 
+    score += 1
+  else
+    puts "wrong... :("
+  end
+end
+
+ask(Q1[:Q], Q1[:O], Q1[:A])
+puts "Your score was #{score}!"
