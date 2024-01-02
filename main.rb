@@ -29,14 +29,15 @@ questions = {
     }, 
     Q5: {
         Q: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        O: ["<script name='xxx.js'>', '<script src='xxx.js'>', '<script href='xxx.js'>"],  
+        O: ["<script name='xxx.js'>", "<script src='xxx.js'>", "<script href='xxx.js'>"],  
         A: 2 #"<script src='xxx.js'>"
     }, 
 }
 
-puts "Welcome to this Javascript quiz that i made in Ruby and stole all the questions for! (I previously made one in node and most of those questions were taken from W3 schools' JS quiz)"
+puts "Welcome to this Javascript quiz that i made in Ruby and stole all the questions for!
+(I previously made one in node where most of the questions were taken from W3 schools' JS quiz, and I've used some of the same questions here)"
 
-puts "How to play:\n 
+puts "\nHow to play:
 Read each question and your options properly, then enter the number of the option you think is correct."
 
 Q1 = questions[:Q1]
@@ -107,4 +108,4 @@ question3.ask
 question4.ask
 question5.ask
 
-question5.winner?
+question1.winner?
